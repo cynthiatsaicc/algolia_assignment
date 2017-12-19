@@ -28,7 +28,7 @@ for (var key1 in o_one){
 };
 fs.writeFile('combined.json', JSON.stringify(array), function(err) {
     if (err) {
-        console.log("WE GOOFED");
+        console.log("failed");
     } else {
         console.log("printed to 'combined.json'");
     }
