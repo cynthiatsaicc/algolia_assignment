@@ -1,0 +1,20 @@
+ {
+   "objectID": 101422,
+   "food_type": "Contemporary American",
+   "stars_count": 4.6,
+   "reviews_count": 180,
+   "neighborhood": "Carbondale",
+   "phone_number": "(970) 963-6328",
+   "price_range": "$30 and under",
+   "dining_style": "Casual Dining"
+ },
+ {
+   "objectID": 111058,
+   "food_type": "American",
+   "stars_count": 4.6,
+   "reviews_count": 35,
+   "neighborhood": "Paradise",
+   "phone_number": "(702) 451-2323",
+   "price_range": "$30 and under",
+   "dining_style": "Casual Dining"
+ }
