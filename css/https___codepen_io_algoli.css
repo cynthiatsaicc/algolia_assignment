@@ -1,7 +1,5 @@
 body {
 	background-image: url(background.png);
-	font-family: Arial;
-	
 }
 
 .main {
@@ -9,8 +7,14 @@ body {
     margin-left: 75px; 
 	margin-right: 75px;
 	height: 100%;
+	max-width: 900px;
 	background-color: #FFFFFF;
-	
+}
+
+@media screen and (min-height: 600px) {
+	.main {
+		min-height: 575px;
+	}
 }
 
 .headersearch {
@@ -31,11 +35,17 @@ margin-top: 20px;
 
 .sidenav {
 	width: 250px;
-	height: auto;
+	height: 500px;
 	position: absolute;
 	z-index: 1;
 	overflow-x: hidden;
 	border-right: 1px solid #ccc; 
+}
+
+@media screen and (max-width: 600px) {
+	.sidenav {
+		height: auto;
+	}
 }
 
 ul.facet-list div {
@@ -49,10 +59,10 @@ ul.facet-list div.active {
 }
 
 .facet{
-	margin-left: 20px;
+	margin-left: 10px;
 	background-color: #FFFFFF;
 	border: none;
-	font-size: 13px;
+	font-size: 12px;
     text-decoration: none;
     display: inline-block;
 }
@@ -64,10 +74,26 @@ ul.facet-list div.active {
 
 .maincontent {
 	margin-left: 250px;
+	padding-top: 10px;
 	padding-left: 30px;
-	height: 450px;
+	padding-bottom: 10px;
+	height: auto;
 }
 
+.miniheader{
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.miniheader:after{
+	content:'';
+  display:inline-block;
+  width:50%; 
+  height:100%;
+  margin-right:-25%;
+  margin-left: 20px;
+  border-bottom:2px solid #ccc;
+}
 
 .smallpic {
 	float: left;
@@ -79,9 +105,9 @@ ul.facet-list div.active {
 }
 
 .resultcontainer {
-	padding-left: 20px;
-	padding-bottom: 20px;
-	line-height: 5px;
+	padding-left: 100px;
+	padding-bottom: 23px;
+	line-height: 16px;
 	font-size: 16px;
 	-webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
@@ -89,6 +115,16 @@ ul.facet-list div.active {
 
 h5 {
 	color: gray;
+	font-size: 14px;
+}
+
+.pagination {
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: #FFFFFF;
+	border: 2px solid gray;
+	border-radius: 8px;
+
 }
 
 .checked {

@@ -13,8 +13,7 @@ angular.module('AlgoliaSearchHelper', ['ngSanitize']).
 // Expose the helper
 factory('helper', function () {
   return algoliasearchHelper(client, index, {
-    disjunctiveFacets: ['food_type', 'stars_count'],
-    facets: ['payment_options'],
+    disjunctiveFacets: ['food_type', 'stars_count', 'payment_options'],
     hitsPerPage: 3,
     maxValuesPerFacet: 7
   });
@@ -74,8 +73,8 @@ component('searchFacets', {
 
 // Define the search-results
 component('searchResult', {
-template: '\n    <div class="hit results">\n       <h4>{{nbHits}} results in {{pTime}} seconds</h4><span ng-repeat="hit in hits">\n      <script></script>' +
-	'<img ng-src="{{hit.image_url}}" class="smallpic">\n        <div class="resultcontainer"><p>{{hit.name}}</p><p><span ng-bind-html="hit.starHTML"></span>({{hit.reviews_count}} reviews)</p><p>{{hit.food_type}} | {{hit.neighborhood}} | {{hit.price_range}}</p></div>\n        </span>\n      ' + 
+template: '\n    <div class="w3-content">\n       <h4 class="miniheader">{{nbHits}} results in {{pTime}} seconds</h4><div class="w3-row w3-margin" ng-repeat="hit in hits">\n      ' +
+	'<img ng-src="{{hit.image_url}}" class="smallpic">\n        <div class="resultcontainer"><h4>{{hit.name}}</h4><h5><span ng-bind-html="hit.starHTML"></span>({{hit.reviews_count}} reviews)</h5><h5>{{hit.food_type}} | {{hit.neighborhood}} | {{hit.price_range}}</h5></div>\n        </div>\n      ' + 
 	'<span ng-if="hits.length === 0">\n        No results found 😓\n      </span>\n    </div>',
   controller: function SearchResultController($scope, helper) {
     //Checking geolocation
@@ -99,7 +98,7 @@ template: '\n    <div class="hit results">\n       <h4>{{nbHits}} results in {{p
 
 // Define the search-pagination
 component('searchPagination', {
-  template: '<div class="pager">\n      <button class="previous">Previous</button>\n      <span class="current-page"><span ng-bind-html="page"></span></span>\n      <button class="next" ng-click="nextPage()">Next</button>\n    </div>',
+  template: '<div class="pager">\n      <button class="pagination"  ng-click="previousPage()">Previous</button>\n      <span class="current-page"><span ng-bind-html="page"></span></span>\n      <button class="pagination" ng-click="nextPage()">Next</button>\n    </div>',
   controller: function SearchPaginationController($scope, helper) {
 
     helper.on('result', function (results) {
